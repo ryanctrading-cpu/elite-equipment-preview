@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elite Equipment Service &amp; Repair — 3 homepage options</title>
+<style>
+  :root{--ink:#15171a;--bar:#1e2126;--line:#33373d;--amber:#f5b301;--muted:#9aa0a8;--paper:#f4f5f7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--ink);color:var(--paper)}
+  header{background:var(--bar);border-bottom:1px solid var(--line);padding:16px 18px}
+  .top{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between}
+  h1{font-size:16px;font-weight:800;letter-spacing:.01em}
+  h1 span{color:var(--amber)}
+  .sub{color:var(--muted);font-size:13px;margin-top:3px;max-width:640px}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .tab{background:transparent;border:1.5px solid var(--line);color:var(--paper);font-weight:700;
+    font-size:13.5px;padding:9px 15px;border-radius:8px;cursor:pointer;white-space:nowrap}
+  .tab:hover{border-color:var(--amber)}
+  .tab.active{background:var(--amber);color:#111;border-color:var(--amber)}
+  .open{color:var(--muted);font-size:13px;text-decoration:none;padding:9px 4px;white-space:nowrap}
+  .open:hover{color:var(--amber)}
+  .stage{max-width:1100px;margin:0 auto;padding:14px 18px 26px}
+  .frame{width:100%;height:calc(100vh - 150px);min-height:520px;border:1px solid var(--line);
+    border-radius:12px;background:#fff;overflow:hidden}
+  iframe{width:100%;height:100%;border:0;display:block}
+  .note{max-width:1100px;margin:0 auto;padding:0 18px 40px;color:var(--muted);font-size:13px}
+  .note b{color:var(--paper)}
+</style>
+</head>
+<body>
+<header>
+  <div class="top">
+    <div>
+      <h1>Elite Equipment <span>Service &amp; Repair</span></h1>
+      <p class="sub">Three homepage options to compare. Flip between them, then pick the look you like best (or tell me what to mix from each).</p>
+      <div class="tabs">
+        <button class="tab active" data-src="variant-1-rugged.html">1 · Rugged</button>
+        <button class="tab" data-src="variant-2-steel.html">2 · Steel Blue</button>
+        <button class="tab" data-src="variant-3-red.html">3 · Bold Red</button>
+      </div>
+    </div>
+    <a class="open" id="openTab" href="variant-1-rugged.html" target="_blank" rel="noopener">Open full page in new tab ↗</a>
+  </div>
+</header>
+
+<div class="stage">
+  <div class="frame"><iframe id="view" src="variant-1-rugged.html" title="Homepage preview"></iframe></div>
+</div>
+
+<p class="note">
+  <b>Note:</b> these are drafts. Copy, hours, and the phone number are real; photos come next once you send your truck and job shots, and they'll make whichever you pick look a lot stronger.
+</p>
+
+<script>
+  var tabs = document.querySelectorAll('.tab');
+  var view = document.getElementById('view');
+  var openTab = document.getElementById('openTab');
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');
+      view.src = t.dataset.src;
+      openTab.href = t.dataset.src;
+    });
+  });
+</script>
+</body>
+</html>

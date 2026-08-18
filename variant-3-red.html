@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Equipment Service &amp; Repair — Mobile Heavy-Duty &amp; Diesel Repair, Tri-Cities WA</title>
+<style>
+  :root{
+    --red:#c62828; --red-dk:#9e1f1f; --char:#1e2024; --char2:#2a2d33;
+    --bg:#ffffff; --soft:#f5f6f7; --ink:#1a1c20; --muted:#666b72; --line:#e6e8 eb;
+    --line:#e6e8eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  .topbar{position:sticky;top:0;z-index:40;background:var(--char);color:#fff}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .brand .mark{width:36px;height:36px;flex:none;border-radius:7px;background:var(--red);
+    display:grid;place-items:center;font-weight:900;font-size:18px;color:#fff}
+  .brand b{font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brand b span{color:#ff8a8a;font-weight:600}
+  .call-btn{flex:none;background:var(--red);color:#fff;font-weight:800;padding:11px 17px;
+    border-radius:8px;font-size:14px;white-space:nowrap}
+  .call-btn:hover{background:var(--red-dk)}
+
+  .hero{background:var(--char);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:0;right:-60px;width:280px;height:100%;
+    background:var(--red);transform:skewX(-14deg);opacity:.16}
+  .hero .wrap{position:relative;padding:60px 20px 66px}
+  .tagband{display:inline-block;background:var(--red);color:#fff;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;font-size:12px;padding:7px 14px;border-radius:6px;margin-bottom:18px}
+  .hero h1{font-size:clamp(30px,6.2vw,50px);line-height:1.04;font-weight:900;letter-spacing:-.01em}
+  .hero h1 em{color:var(--red);font-style:normal;background:#fff;padding:0 8px;border-radius:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .hero p.lead{margin-top:18px;max-width:600px;font-size:clamp(16px,2.3vw,19px);color:#d3d6da}
+  .cta-row{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:9px;padding:15px 22px;font-size:16px}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dk)}
+  .btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-line:hover{border-color:#fff}
+  .strip{background:var(--red);color:#fff}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:center;padding:14px 20px;
+    font-weight:700;font-size:14.5px;text-transform:uppercase;letter-spacing:.03em}
+  .strip span{opacity:.95}
+
+  section{padding:56px 0}
+  .sec-head{margin-bottom:30px}
+  .sec-head .kick{color:var(--red);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+  .sec-head h2{font-size:clamp(24px,4.4vw,34px);font-weight:900;color:var(--char);margin-top:8px;letter-spacing:-.01em}
+  .sec-head p{color:var(--muted);margin-top:9px;max-width:640px}
+
+  .grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(235px,1fr))}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;
+    border-left:4px solid var(--red);transition:transform .12s}
+  .card:hover{transform:translateY(-3px)}
+  .card h3{font-size:17px;font-weight:800;color:var(--char)}
+  .card p{color:var(--muted);font-size:14.5px;margin-top:7px}
+
+  .why{background:var(--char);color:#fff}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:#b7bbc1}
+  .why .grid{grid-template-columns:repeat(auto-fit,minmax(245px,1fr))}
+  .why .card{background:var(--char2);border-color:#3a3d44;border-left-color:var(--red)}
+  .why .card h3{color:#fff}
+  .why .card p{color:#b7bbc1}
+  .why .num{color:var(--red);font-weight:900;font-size:24px}
+
+  .split{background:var(--soft)}
+  .cols{display:grid;gap:26px;grid-template-columns:1.25fr 1fr}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;
+    font-size:14px;font-weight:600;color:var(--char)}
+  .hours-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+  .hours-box .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .hours-box .row:last-child{border-bottom:none}
+  .hours-box .row.closed{color:var(--muted)}
+  .hours-box .open{color:var(--red);font-weight:700}
+
+  .band{background:var(--red);color:#fff;text-align:center}
+  .band .wrap{padding:48px 20px}
+  .band h2{font-size:clamp(24px,4.6vw,36px);font-weight:900}
+  .band p{margin-top:9px;font-size:17px;opacity:.95}
+  .band .btn-dark{margin-top:22px;background:var(--char);color:#fff}
+  .band .btn-dark:hover{background:#000}
+
+  footer{background:var(--char);color:#9a9ea5;padding:38px 0 96px}
+  footer .cols{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;display:grid}
+  footer h4{text-transform:uppercase;font-size:12.5px;letter-spacing:.1em;color:#ff8a8a;margin-bottom:11px}
+  footer a.line,footer p.line{display:block;font-size:14.5px;padding:8px 0;color:#9a9ea5}
+  footer a.line:hover{color:#fff}
+  .credit{margin-top:26px;padding-top:18px;border-top:1px solid #3a3d44;color:#71757c;font-size:12.5px}
+  .credit a{color:#ff8a8a}
+
+  .mobile-call{display:none}
+  @media(max-width:760px){
+    .cols{grid-template-columns:1fr}
+    .brand b{font-size:14px}
+    .mobile-call{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--red);
+      box-shadow:0 -2px 12px rgba(0,0,0,.25)}
+    .mobile-call a{display:flex;align-items:center;justify-content:center;gap:9px;color:#fff;
+      font-weight:900;text-transform:uppercase;letter-spacing:.03em;padding:15px;font-size:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="mark">E</span>
+      <b>Elite Equipment <span>Service &amp; Repair</span></b>
+    </a>
+    <a href="tel:+15207056606" class="call-btn">Call (520) 705-6606</a>
+  </div>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tagband">Mobile heavy-duty mechanic · Tri-Cities, WA</span>
+    <h1>Your rig is down. <em>We roll to you.</em></h1>
+    <p class="lead">Class 8 trucks, trailers, diesel engines, and heavy equipment repaired on site across the Tri-Cities. Skip the tow. We bring the shop to your yard, the road, or the job.</p>
+    <div class="cta-row">
+      <a href="tel:+15207056606" class="btn btn-red">Call (520) 705-6606</a>
+      <a href="sms:+15207056606" class="btn btn-line">Text us</a>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <span>Class 8 trucks</span><span>Trailers</span><span>Diesel</span>
+    <span>Hydraulics</span><span>Farm &amp; construction</span><span>Motorhomes</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">What we fix</div>
+      <h2>Services</h2>
+      <p>If it's diesel or heavy, it's what we do. One number for the whole rig.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Class 8 Truck Repair</h3><p>Semis and highway trucks diagnosed and repaired where they sit.</p></div>
+      <div class="card"><h3>Trailer Repair</h3><p>Brakes, lights, suspension, and structural work on every trailer type.</p></div>
+      <div class="card"><h3>Diesel Engine Service</h3><p>Diagnostics, repairs, and rebuilds on heavy diesel powerplants.</p></div>
+      <div class="card"><h3>Hydraulic Systems</h3><p>Cylinders, pumps, hoses, and leaks fixed on equipment of any size.</p></div>
+      <div class="card"><h3>Farm &amp; Ag Equipment</h3><p>Tractors and field equipment serviced on the farm, in season.</p></div>
+      <div class="card"><h3>Construction Machinery</h3><p>Road and site equipment kept running so the schedule holds.</p></div>
+      <div class="card"><h3>Motorhome &amp; RV Repair</h3><p>Chassis and engine work for motorhomes and heavy RVs.</p></div>
+      <div class="card"><h3>Preventive Maintenance</h3><p>Oil changes and scheduled service that keep small problems small.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Why mobile</div>
+      <h2>Every hour down costs you</h2>
+      <p>A truck or machine that can't move isn't earning. We bring the fix to it.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><div class="num">01</div><h3 style="margin-top:8px">We come to you</h3><p>Your yard, the roadside, or the job site. No tow bill, no hauling equipment across the county.</p></div>
+      <div class="card"><div class="num">02</div><h3 style="margin-top:8px">Less time down</h3><p>Repaired on site means back in service sooner, often the same visit.</p></div>
+      <div class="card"><div class="num">03</div><h3 style="margin-top:8px">Straight answers</h3><p>What's wrong, what it takes, and what it costs. No runaround.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="split" id="area">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="sec-head" style="margin-bottom:6px">
+          <div class="kick">Service area</div>
+          <h2 style="font-size:clamp(22px,3.6vw,28px)">Across the Tri-Cities</h2>
+        </div>
+        <p style="color:var(--muted)">Mobile service throughout the Tri-Cities and the surrounding towns:</p>
+        <div class="chips">
+          <span class="chip">Kennewick</span><span class="chip">Pasco</span>
+          <span class="chip">Richland</span><span class="chip">West Richland</span>
+          <span class="chip">Burbank</span><span class="chip">Finley</span>
+          <span class="chip">Benton City</span><span class="chip">Prosser</span>
+          <span class="chip">Connell</span>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head" style="margin-bottom:6px">
+          <div class="kick">Hours</div>
+          <h2 style="font-size:clamp(22px,3.6vw,28px)">When we're out</h2>
+        </div>
+        <div class="hours-box">
+          <div class="row"><span>Mon</span><span class="open">8:00 AM – 5:00 PM</span></div>
+          <div class="row"><span>Tue</span><span class="open">8:00 AM – 5:00 PM</span></div>
+          <div class="row"><span>Wed</span><span class="open">8:00 AM – 5:00 PM</span></div>
+          <div class="row"><span>Thu</span><span class="open">8:00 AM – 5:00 PM</span></div>
+          <div class="row"><span>Fri</span><span class="open">8:00 AM – 5:00 PM</span></div>
+          <div class="row closed"><span>Sat</span><span>Closed</span></div>
+          <div class="row closed"><span>Sun</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <h2>Broke down? Call now.</h2>
+    <p>Tell us what you're running and what it's doing. We'll roll.</p>
+    <a href="tel:+15207056606" class="btn btn-dark">Call (520) 705-6606</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Elite Equipment Service &amp; Repair</h4>
+        <p class="line">Mobile heavy-duty &amp; diesel mechanic serving the Tri-Cities, WA.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a class="line" href="tel:+15207056606">Call: (520) 705-6606</a>
+        <a class="line" href="sms:+15207056606">Text: (520) 705-6606</a>
+        <a class="line" href="https://www.facebook.com/profile.php?id=61591619512460" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p class="line">Monday – Friday</p>
+        <p class="line">8:00 AM – 5:00 PM</p>
+        <p class="line">Closed weekends</p>
+      </div>
+    </div>
+    <div class="credit">
+      © 2026 Elite Equipment Service &amp; Repair. Site built by
+      <a href="https://stratosreach.com" target="_blank" rel="noopener">StratosReach</a>.
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-call">
+  <a href="tel:+15207056606">Call (520) 705-6606</a>
+</div>
+
+</body>
+</html>
