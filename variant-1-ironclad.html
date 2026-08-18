@@ -14,37 +14,36 @@
   body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--paper);background:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
-  .topbar{position:sticky;top:0;z-index:40;background:rgba(16,17,19,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+  .topbar{position:sticky;top:0;z-index:40;background:rgba(16,17,19,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px}
   .brand{display:flex;align-items:center;gap:10px;min-width:0}
-  .brand .mark{width:36px;height:36px;flex:none;border-radius:7px;background:var(--orange);
-    display:grid;place-items:center;color:#111;font-weight:900;font-size:18px}
-  .brand b{font-size:15px;letter-spacing:.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .brand b span{color:var(--orange)}
+  .brand img{height:46px;width:auto}
   .call-btn{flex:none;background:var(--orange);color:#111;font-weight:800;padding:10px 16px;border-radius:8px;font-size:14px;white-space:nowrap}
   .call-btn:hover{background:var(--orange-dk)}
 
-  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--orange);
-    background:linear-gradient(180deg,rgba(16,17,19,.7),rgba(16,17,19,.95)),
-      repeating-linear-gradient(45deg,#17181b 0 26px,#141517 26px 52px)}
-  .stripe{height:7px;background:repeating-linear-gradient(45deg,var(--orange) 0 18px,#111 18px 36px)}
-  .hero .wrap{padding:54px 20px 58px}
-  .eyebrow{color:var(--orange);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-bottom:14px}
+  .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--orange)}
+  .hero .bg{position:absolute;inset:0;background-image:url('assets/hero.jpg');background-size:cover;background-position:center;filter:grayscale(.2)}
+  .hero .bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(16,17,19,.82),rgba(16,17,19,.93))}
+  .stripe{position:relative;z-index:2;height:7px;background:repeating-linear-gradient(45deg,var(--orange) 0 18px,#111 18px 36px)}
+  .hero .wrap{position:relative;z-index:2;padding:52px 20px 58px}
+  .hero .logo-lg{height:120px;width:auto;margin-bottom:22px}
+  .eyebrow{color:var(--orange);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px;margin-bottom:12px}
   .hero h1{font-size:clamp(30px,6.6vw,50px);text-transform:uppercase;font-weight:900;line-height:1.03}
   .hero h1 span{color:var(--orange)}
-  .hero p.lead{margin-top:16px;max-width:640px;font-size:clamp(16px,2.4vw,19px);color:#d8dade}
+  .hero p.lead{margin-top:16px;max-width:640px;font-size:clamp(16px,2.4vw,19px);color:#dcdee2}
   .cta-row{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-radius:9px;padding:15px 22px;font-size:16px}
   .btn-orange{background:var(--orange);color:#111}
   .btn-orange:hover{background:var(--orange-dk)}
-  .btn-ghost{background:transparent;color:var(--paper);border:1.5px solid var(--line)}
+  .btn-ghost{background:rgba(0,0,0,.35);color:var(--paper);border:1.5px solid var(--line)}
   .btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
 
   .badges{background:var(--panel2);border-bottom:1px solid var(--line)}
-  .badges .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;padding:15px 20px;
-    color:var(--paper);font-size:14px;font-weight:700}
+  .badges .wrap{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;padding:15px 20px;color:var(--paper);font-size:14px;font-weight:700}
   .badges b{color:var(--orange)}
 
   section{padding:54px 0}
@@ -59,17 +58,20 @@
   .card h3{font-size:16.5px;text-transform:uppercase;letter-spacing:.01em;font-weight:800}
   .card p{color:var(--muted);font-size:14.5px;margin-top:7px}
 
+  .work .gal{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .work .gal figure{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel2)}
+  .work .gal img{height:230px;width:100%;object-fit:cover}
+
+  .about{background:var(--panel)}
   .about .cols{display:grid;gap:26px;grid-template-columns:1.2fr .8fr;align-items:start}
   .about p{color:#d3d6da;font-size:16px;margin-bottom:12px}
-  .about .pull{background:var(--panel2);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;
-    padding:18px 20px;color:var(--paper)}
+  .about .pull{background:var(--panel2);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:18px 20px}
   .about .pull h3{color:var(--orange);text-transform:uppercase;font-size:13px;letter-spacing:.08em;margin-bottom:10px}
   .about .pull ul{list-style:none}
   .about .pull li{padding:7px 0;border-bottom:1px solid var(--line);font-size:15px}
   .about .pull li:last-child{border-bottom:none}
   .about .pull li b{color:var(--orange)}
 
-  .split{background:var(--panel)}
   .split .cols{display:grid;gap:24px;grid-template-columns:1.3fr 1fr}
   .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
   .chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
@@ -87,8 +89,9 @@
   .band .btn-dark{margin-top:20px;background:#111;color:var(--orange)}
   .band .btn-dark:hover{background:#000}
 
-  footer{background:#0b0c0d;border-top:1px solid var(--line);padding:36px 0 96px}
-  footer .cols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  footer{background:#0b0c0d;border-top:1px solid var(--line);padding:34px 0 96px}
+  footer .fcols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  footer .flogo{height:64px;width:auto;margin-bottom:10px}
   footer h4{text-transform:uppercase;font-size:13px;letter-spacing:.1em;color:var(--orange);margin-bottom:10px}
   footer a.line,footer p.line{display:block;color:var(--muted);font-size:14.5px;padding:8px 0}
   footer a.line:hover{color:var(--orange)}
@@ -99,11 +102,9 @@
   @media(max-width:760px){
     .about .cols{grid-template-columns:1fr}
     .split .cols{grid-template-columns:1fr}
-    .brand b{font-size:13.5px}
-    .topbar .call-btn{padding:9px 13px;font-size:13px}
+    .hero .logo-lg{height:92px}
     .mobile-call{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--orange);border-top:2px solid #111}
-    .mobile-call a{display:flex;align-items:center;justify-content:center;gap:9px;color:#111;font-weight:900;
-      text-transform:uppercase;letter-spacing:.03em;padding:15px;font-size:16px}
+    .mobile-call a{display:flex;align-items:center;justify-content:center;gap:9px;color:#111;font-weight:900;text-transform:uppercase;letter-spacing:.03em;padding:15px;font-size:16px}
   }
 </style>
 </head>
@@ -111,17 +112,16 @@
 
 <div class="topbar">
   <div class="wrap">
-    <a href="#top" class="brand">
-      <span class="mark">E</span>
-      <b>Elite Equipment <span>Service &amp; Repair</span></b>
-    </a>
+    <a href="#top" class="brand"><img src="assets/logo.png" alt="Elite Equipment Service &amp; Repair"></a>
     <a href="tel:+15207056606" class="call-btn">Call (520) 705-6606</a>
   </div>
 </div>
 
 <header class="hero" id="top">
+  <div class="bg"></div>
   <div class="stripe"></div>
   <div class="wrap">
+    <img class="logo-lg" src="assets/logo.png" alt="Elite Equipment Service &amp; Repair">
     <div class="eyebrow">Mobile heavy-duty &amp; diesel mechanic · Pacific Northwest</div>
     <h1>Your Rig Is Down. <span>We Come To You.</span></h1>
     <p class="lead">Class 8 trucks, trailers, motorhomes, and heavy equipment repaired on site across Washington, Oregon, and Idaho. Honest, no-nonsense work, and I'll walk you through the whole repair if you want to understand it.</p>
@@ -158,6 +158,21 @@
       <div class="card"><h3>Starters, Alternators &amp; Charging</h3><p>Batteries, starters, alternators, and electrical diagnostics.</p></div>
       <div class="card"><h3>Roadside &amp; Emergency</h3><p>Broke down on the road or the job site? We come to you.</p></div>
       <div class="card"><h3>Pre-Purchase Inspections</h3><p>Know what you're buying before you buy the truck or trailer.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kick">Recent work</div>
+      <h2>On the tools</h2>
+      <p>Real jobs, from heavy equipment to Class 8 diesel and hydraulics.</p>
+    </div>
+    <div class="gal">
+      <figure><img src="assets/work-1.jpg" alt="Heavy equipment service"></figure>
+      <figure><img src="assets/work-2.jpg" alt="Diesel exhaust and turbo work"></figure>
+      <figure><img src="assets/work-3.jpg" alt="Engine and hydraulic repair"></figure>
     </div>
   </div>
 </section>
@@ -234,9 +249,9 @@
 
 <footer>
   <div class="wrap">
-    <div class="cols">
+    <div class="fcols">
       <div>
-        <h4>Elite Equipment Service &amp; Repair</h4>
+        <img class="flogo" src="assets/logo.png" alt="Elite Equipment Service &amp; Repair">
         <p class="line">Mobile heavy-duty &amp; diesel mechanic. Based in the Tri-Cities, serving WA, OR &amp; ID.</p>
       </div>
       <div>
