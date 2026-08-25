@@ -121,7 +121,7 @@ footer{background:#0b0c0d;border-top:1px solid var(--line);padding:34px 0 96px}
 footer .fcols{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 footer .flogo{height:64px;width:auto;margin-bottom:10px}
 footer h4{text-transform:uppercase;font-size:13px;letter-spacing:.1em;color:var(--orange);margin-bottom:10px}
-footer a.line,footer p.line{display:block;color:var(--muted);font-size:14.5px;padding:8px 0}
+footer a.line,footer p.line{display:block;color:var(--muted);font-size:14.5px;padding:8px 0;overflow-wrap:anywhere}
 footer a.line:hover{color:var(--orange)}
 .credit{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);color:#70747b;font-size:12.5px}
 .credit a{color:var(--orange)}
