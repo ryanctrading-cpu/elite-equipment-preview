@@ -126,6 +126,12 @@ footer a.line:hover{color:var(--orange)}
 .credit{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);color:#70747b;font-size:12.5px}
 .credit a{color:var(--orange)}
 
+/* Facebook footer bubble */
+.fb-bubble{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);margin-top:14px}
+.fb-bubble svg{width:21px;height:21px;fill:var(--paper)}
+.fb-bubble:hover{background:var(--orange);border-color:var(--orange)}
+.fb-bubble:hover svg{fill:#111}
+
 /* Sticky mobile call */
 .mobile-call{display:none}
 @media(max-width:760px){
