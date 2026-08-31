@@ -24,6 +24,19 @@ img{max-width:100%;display:block}
 .nav a{padding:13px 14px;font-size:13.5px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--paper)}
 .nav a:hover,.nav a.active{color:var(--orange)}
 
+/* Request-a-quote bar */
+.quotebar{background:var(--panel);border-bottom:3px solid var(--orange)}
+.quotebar .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 18px;padding:16px 20px}
+.qb-text{font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:15px;color:var(--paper)}
+.qb-text b{color:var(--orange)}
+.quote-btn{flex:none;background:var(--orange);color:#111;font-weight:900;text-transform:uppercase;letter-spacing:.03em;padding:14px 28px;border-radius:9px;font-size:16px;border:2px solid var(--orange)}
+.quote-btn:hover{background:var(--orange-dk);border-color:var(--orange-dk)}
+@media(max-width:600px){
+  .quotebar .wrap{justify-content:center;text-align:center}
+  .qb-text{width:100%}
+  .quote-btn{width:100%;display:flex;align-items:center;justify-content:center}
+}
+
 /* Home hero */
 .hero{position:relative;overflow:hidden;border-bottom:3px solid var(--orange)}
 .hero .bg{position:absolute;inset:0;background-image:url('../assets/hero.jpg');background-size:cover;background-position:center;filter:grayscale(.2)}
